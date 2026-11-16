@@ -103,7 +103,7 @@ func (o *opt) matchLongOpt(args []string, idx int, c *ParseContext) (bool, int, 
 			return false, 2, args
 		}
 		value := args[idx+1]
-		if strings.HasPrefix(value, "-") {
+		if value != "-" && strings.HasPrefix(value, "-") {
 			return false, 0, args
 		}
 		c.Opts[o.theOne] = append(c.Opts[o.theOne], value)
@@ -168,7 +168,7 @@ func (o *opt) matchShortOpt(args []string, idx int, c *ParseContext) (bool, int,
 			}
 
 			value = args[idx+1]
-			if strings.HasPrefix(value, "-") {
+			if value != "-" && strings.HasPrefix(value, "-") {
 				return false, 0, args
 			}
 			c.Opts[o.theOne] = append(c.Opts[o.theOne], value)

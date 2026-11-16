@@ -1,0 +1,4 @@
+# Upstream help fixtures intentionally preserve trailing tabwriter whitespace.
+testdata/*.txt -whitespace
+# Preserve the upstream license verbatim, including its final blank line.
+LICENSE -whitespace
